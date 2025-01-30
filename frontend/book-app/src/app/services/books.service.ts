@@ -47,6 +47,22 @@ export class BooksService {
       this.books.update((prevBooks) => prevBooks.filter((b) => b.id !== id));
     });
   }
+  
+  // Remove a book from a book list
+  removeBookFromList(bookListId: number, bookId: number): void {
+    this.http
+      .delete<void>(`${this.baseUrl}/booklists/${bookListId}/remove/?book_ids=${bookId}`)
+      .subscribe(() => {
+        // Update the book list in the UI after removing the book
+        this.bookLists.update((prevLists) =>
+          prevLists.map((list) =>
+            list.id === bookListId
+              ? { ...list, books: list.books.filter((book) => book.id !== bookId) }
+              : list
+          )
+        );
+      });
+  }
 
   // Create a new booklist
   createBookList(name: string, bookIds: number[]): void {

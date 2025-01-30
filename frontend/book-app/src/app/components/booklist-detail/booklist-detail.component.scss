@@ -4,6 +4,8 @@ $secondary-color: #f9f9f9;
 $text-color: #333;
 $white-color: #ffffff;
 $border-color: #ddd;
+$danger-color: #dc3545;
+$danger-hover-color: #c82333;
 $padding: 12px;
 
 // Booklist Detail Container
@@ -34,12 +36,30 @@ $padding: 12px;
     padding: 0;
 
     li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       background: $secondary-color;
       padding: $padding;
       margin: 5px 0;
       border-radius: 5px;
       border: 1px solid $border-color;
       font-size: 1rem;
+
+      .btn-delete {
+        padding: 6px 12px;
+        background-color: $danger-color;
+        color: $white-color;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 0.9rem;
+        transition: background 0.3s;
+
+        &:hover {
+          background-color: $danger-hover-color;
+        }
+      }
     }
   }
 }

@@ -27,4 +27,11 @@ export class BooklistDetailComponent {
       this.bookListId.set(Number(params.get('id'))); // Update ID when route changes
     });
   }
+
+  // Function to remove a book from the list
+  removeBook(bookId: number): void {
+    if (this.bookListId()) {
+      this.apiService.removeBookFromList(this.bookListId()!, bookId);
+    }
+  }
 }
