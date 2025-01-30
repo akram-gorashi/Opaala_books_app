@@ -1,0 +1,77 @@
+// Variables
+$primary-color: #007bff;
+$secondary-color: #f9f9f9;
+$hover-color: #f1f1f1;
+$text-color: #333;
+$white-color: #ffffff;
+$success-color: #28a745;
+$success-hover-color: #218838;
+$border-color: #ddd;
+$table-padding: 10px;
+$font-size-small: 12px;
+$font-size-medium: 14px;
+$font-size-large: 1.5rem;
+
+// Styles
+.books-container {
+  margin: 20px auto;
+  max-width: 800px;
+
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: $text-color;
+    font-size: $font-size-large;
+  }
+
+  .books-table {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+
+    thead {
+      background-color: $primary-color;
+      color: $white-color;
+
+      th {
+        text-align: left;
+        padding: $table-padding;
+        font-size: $font-size-medium;
+      }
+    }
+
+    tbody {
+      tr {
+        &:nth-child(even) {
+          background-color: $secondary-color;
+        }
+
+        &:hover {
+          background-color: $hover-color;
+        }
+      }
+
+      td {
+        padding: $table-padding;
+        font-size: $font-size-medium;
+        border-bottom: 1px solid $border-color;
+
+        .btn-add {
+          padding: 5px 10px;
+          background-color: $success-color;
+          color: $white-color;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+          font-size: $font-size-small;
+
+          &:hover {
+            background-color: $success-hover-color;
+          }
+        }
+      }
+    }
+  }
+}

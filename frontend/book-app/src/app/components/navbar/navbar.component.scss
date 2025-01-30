@@ -1,0 +1,44 @@
+// Variables
+@import '../../../styles/variables';
+
+
+// Navbar Styling
+.navbar {
+  background-color: $primary-color;
+  color: $white-color;
+  padding: $padding-navbar;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .navbar-brand {
+    font-size: $font-size-large;
+    font-weight: bold;
+    color: $white-color;
+    text-decoration: none;
+  }
+
+  .navbar-links {
+    list-style: none;
+    display: flex;
+    gap: $gap-navbar-links;
+
+    li a {
+      color: $white-color;
+      text-decoration: none;
+      font-size: $font-size-regular;
+
+      &:hover {
+        text-decoration: $text-hover-decoration;
+      }
+
+      &.active {
+        font-weight: bold;
+        text-decoration: $text-hover-decoration;
+      }
+    }
+  }
+}

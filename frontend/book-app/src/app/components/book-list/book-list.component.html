@@ -1,1 +1,26 @@
-<p>book-list works!</p>
+<div class="books-container">
+    <h2>Books List</h2>
+    <table class="books-table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Title</th>
+          <th>Author</th>
+          <th>Year</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let book of books; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>{{ book.title }}</td>
+          <td>{{ book.author }}</td>
+          <td>{{ book.year }}</td>
+          <td>
+            <button class="btn-add" (click)="addToList(book)">Add to List</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

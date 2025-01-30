@@ -7,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrl: './book-list.component.scss'
 })
 export class BookListComponent {
-
+  addToList(book: any) {
+    console.log(book)
+  }
 }
