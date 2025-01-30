@@ -1,8 +1,8 @@
 import { Component, inject, signal } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { BooksService } from '../../services/books.service';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { BooksService } from '../../services/books.service';
 
 @Component({
   selector: 'app-book-create',
@@ -11,7 +11,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './book-create.component.scss'
 })
 export class BookCreateComponent {
-  private apiService = inject(BooksService);
+  private bookService = inject(BooksService);
   private router = inject(Router);
   successMessage = signal('');
 
@@ -23,7 +23,7 @@ export class BookCreateComponent {
 
   createBook(): void {
     if (this.bookForm.valid) {
-      this.apiService.createBook({
+      this.bookService.createBook({
         title: this.bookForm.get('title')!.value as string,
         author: this.bookForm.get('author')!.value as string,
         year: Number(this.bookForm.get('year')!.value),

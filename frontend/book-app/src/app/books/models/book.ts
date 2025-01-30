@@ -5,9 +5,3 @@ export interface Book {
     author: string;
   }
   
-  export interface BookList {
-    id: number; 
-    name: string;
-    books: Book[]; 
-  }
-  

@@ -1,0 +1,15 @@
+@use "../styles/variables" as *;
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.content {
+  flex: 1;
+  overflow-y: auto;
+  padding-top: $navbar-height; 
+  padding-bottom: $footer-height; 
+}

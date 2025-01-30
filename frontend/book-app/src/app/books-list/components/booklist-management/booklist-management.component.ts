@@ -1,7 +1,7 @@
-import { Component, inject } from '@angular/core';
-import { BooksService } from '../../services/books.service';
 import { CommonModule } from '@angular/common';
+import { Component, inject } from '@angular/core';
 import { Router } from '@angular/router';
+import { BookListService } from '../../services/book-list.service';
 
 @Component({
   selector: 'app-booklist-management',
@@ -10,17 +10,17 @@ import { Router } from '@angular/router';
   styleUrl: './booklist-management.component.scss'
 })
 export class BooklistManagementComponent {
-  private booksService = inject(BooksService);
+  private bookListService = inject(BookListService);
   private router = inject(Router)
-  bookLists = this.booksService.bookLists;
-  bookListCount = this.booksService.bookListCount;
+  bookLists = this.bookListService.bookLists;
+  bookListCount = this.bookListService.bookListCount;
 
   constructor() {
-    this.booksService.loadBookLists();
+    this.bookListService.loadBookLists();
   }
 
   deleteBookList(id: number): void {
-    this.booksService.deleteBookList(id);
+    this.bookListService.deleteBookList(id);
   }
 
   navigateToAddBookLists(): void {

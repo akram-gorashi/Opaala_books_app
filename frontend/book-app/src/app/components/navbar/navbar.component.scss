@@ -1,17 +1,24 @@
-// Variables
-@import '../../../styles/variables';
-
+@use "../../../styles/variables" as *;
 
 // Navbar Styling
 .navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   background-color: $primary-color;
   color: $white-color;
   padding: $padding-navbar;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
 
   .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    max-width: $max-width;
+    margin: auto;
+    padding: 0 $base-padding;
   }
 
   .navbar-brand {
@@ -30,9 +37,12 @@
       color: $white-color;
       text-decoration: none;
       font-size: $font-size-regular;
+      padding: $navbar-link-padding;
+      transition: color 0.3s;
 
       &:hover {
         text-decoration: $text-hover-decoration;
+        color: $hover-color;
       }
 
       &.active {
@@ -41,4 +51,9 @@
       }
     }
   }
+}
+
+// Ensure content is not hidden behind the navbar
+.content {
+  padding-top: $navbar-height;
 }

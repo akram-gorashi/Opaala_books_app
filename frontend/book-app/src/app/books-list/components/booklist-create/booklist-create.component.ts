@@ -1,8 +1,9 @@
 import { Component, inject, signal } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { BooksService } from '../../services/books.service';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
+import { BookListService } from '../../services/book-list.service';
+import { BooksService } from '../../../books/services/books.service';
 
 @Component({
   selector: 'app-booklist-create',
@@ -12,6 +13,7 @@ import { Router } from '@angular/router';
 })
 export class BooklistCreateComponent {
   private bookService = inject(BooksService);
+  private bookListService = inject(BookListService);
   private router = inject(Router)
   successMessage = signal('');
   books = this.bookService.books;
@@ -36,7 +38,7 @@ export class BooklistCreateComponent {
   //  Create a new book list
   createBookList(): void {
     if (this.booklistForm.valid) {
-      this.bookService.createBookList(
+      this.bookListService.createBookList(
         this.booklistForm.get('name')?.value as string,
         this.selectedBookIds()
       );

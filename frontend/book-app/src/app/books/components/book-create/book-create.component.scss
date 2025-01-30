@@ -1,0 +1,61 @@
+@use '../../../../styles/_variables' as *;
+
+.form-container {
+  max-width: 500px;
+  margin: 40px auto;
+  padding: $base-padding;
+  background: $white-color;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid $border-color;
+
+  h2 {
+    text-align: center;
+    color: $primary-color;
+  }
+
+  label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+    color: $text-color;
+  }
+
+  input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid $border-color;
+    border-radius: 4px;
+    font-family: inherit;
+  }
+
+  button {
+    margin-top: 15px;
+    width: 100%;
+    padding: $btn-padding;
+    background-color: $primary-color;
+    color: $white-color;
+    border: none;
+    cursor: pointer;
+    border-radius: $btn-radius;
+    font-family: inherit;
+    transition: background 0.3s;
+
+    &:hover {
+      background-color: $primary-color;
+    }
+
+    &:disabled {
+      background-color: $btn-disabled-bg;
+      cursor: not-allowed;
+    }
+  }
+
+  .success-message {
+    margin-top: 10px;
+    color: $accent-color;
+    font-weight: bold;
+    text-align: center;
+  }
+}

@@ -1,9 +1,9 @@
 import { Routes } from '@angular/router';
-import { BookCreateComponent } from './components/book-create/book-create.component';
-import { BookListComponent } from './components/book-list/book-list.component';
-import { BooklistCreateComponent } from './components/booklist-create/booklist-create.component';
-import { BooklistDetailComponent } from './components/booklist-detail/booklist-detail.component';
-import { BooklistManagementComponent } from './components/booklist-management/booklist-management.component';
+import { BookCreateComponent } from './books/components/book-create/book-create.component';
+import { BookListComponent } from './books/components/book-list/book-list.component';
+import { BooklistCreateComponent } from './books-list/components/booklist-create/booklist-create.component';
+import { BooklistDetailComponent } from './books-list/components/booklist-detail/booklist-detail.component';
+import { BooklistManagementComponent } from './books-list/components/booklist-management/booklist-management.component';
 
 export const appRoutes: Routes = [
   { path: '', component: BookListComponent, title: 'Home' },

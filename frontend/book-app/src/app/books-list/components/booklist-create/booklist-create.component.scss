@@ -1,0 +1,68 @@
+@use '../../../../styles/_variables' as *;
+
+// Form Container
+.form-container {
+  max-width: 500px;
+  margin: 40px auto;
+  padding: $base-padding;
+  background: $white-color;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid $border-color;
+
+  h2 {
+    text-align: center;
+    color: $primary-color;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+  }
+
+  label, p {
+    font-weight: bold;
+    display: block;
+    margin: 10px 0 5px;
+    color: $text-color;
+  }
+
+  input[type='text'] {
+    width: 95%;
+    padding: $base-padding;
+    border: 1px solid $border-color;
+    border-radius: $btn-radius;
+    font-size: 1rem;
+    transition: border 0.3s;
+
+    &:focus {
+      border-color: $primary-color;
+      outline: none;
+    }
+  }
+
+  button {
+    width: 100%;
+    padding: $btn-padding;
+    background-color: $accent-color;
+    color: $white-color;
+    border: none;
+    border-radius: $btn-radius;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+
+    &:hover {
+      background-color: $accent-color;
+    }
+
+    &:disabled {
+      background-color: $btn-disabled-bg;
+      cursor: not-allowed;
+    }
+  }
+
+  .success-message {
+    text-align: center;
+    margin-top: 10px;
+    color: $accent-color;
+    font-weight: bold;
+  }
+}

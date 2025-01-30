@@ -1,7 +1,9 @@
 <div class="books-container">
   <h2>Books List ({{ bookCount() }})</h2>
+  <div class="btn-add">
 
-  <button class="btn-add" (click)="navigateToAddBook()">+ Add Book</button>
+    <button (click)="navigateToAddBook()">+ Add Book</button>
+  </div>
 
   <table class="books-table">
     <thead>
