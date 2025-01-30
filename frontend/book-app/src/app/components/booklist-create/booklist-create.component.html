@@ -5,7 +5,7 @@
       <input id="name" formControlName="name" type="text" required />
       <span *ngIf="booklistForm.get('name')?.invalid && booklistForm.get('name')?.touched">Name is required</span>
   
-      <label>Select Books:</label>
+      <p>Select Books:</p>
       <div *ngFor="let book of books()">
         <input type="checkbox" [value]="book.id" (change)="updateBookSelection(book.id, $event)" /> {{ book.title }}
       </div>

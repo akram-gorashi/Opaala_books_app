@@ -7,9 +7,9 @@
 
   <ul>
     <li *ngFor="let list of bookLists()">
-      <span (click)="viewBookListDetails(list.id)" class="booklist-name">
+      <button (click)="viewBookListDetails(list.id)" class="booklist-name">
         {{ list.name }} ({{ list.books.length }} books)
-      </span>
+      </button>
       <button class="btn-delete" (click)="deleteBookList(list.id)">Delete</button>
     </li>
   </ul>

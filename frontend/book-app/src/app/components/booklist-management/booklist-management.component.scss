@@ -72,7 +72,7 @@ $padding: 12px;
         color: $text-color;
         cursor: pointer;
         transition: color 0.3s;
-
+        border: 0;
         &:hover {
           color: $primary-color;
         }
