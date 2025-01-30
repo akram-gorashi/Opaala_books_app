@@ -1,1 +1,10 @@
-<p>booklist-detail works!</p>
+<div class="booklist-detail-container" *ngIf="bookList()">
+    <h2>{{ bookList()?.name }}</h2>
+    <h3>Books in this List</h3>
+    <ul>
+      <li *ngFor="let book of bookList()?.books">
+        <strong>{{ book.title }}</strong> - {{ book.author }} ({{ book.year }})
+      </li>
+    </ul>
+  </div>
+  

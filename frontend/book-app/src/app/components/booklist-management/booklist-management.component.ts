@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { BooksService } from '../../services/books.service';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-booklist-management',
@@ -10,7 +11,7 @@ import { CommonModule } from '@angular/common';
 })
 export class BooklistManagementComponent {
   private booksService = inject(BooksService);
-
+  private router = inject(Router)
   bookLists = this.booksService.bookLists;
   bookListCount = this.booksService.bookListCount;
 
@@ -22,4 +23,11 @@ export class BooklistManagementComponent {
     this.booksService.deleteBookList(id);
   }
 
+  navigateToAddBookLists(): void {
+    this.router.navigate(['/booklistcreate']); // Navigate to the book creation page
+  }
+
+  viewBookListDetails(id: number): void {
+    this.router.navigate([`/booklists/${id}`]); // Navigate to book list details
+  }
 }

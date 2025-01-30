@@ -1,33 +1,59 @@
 // Variables
 $primary-color: #007bff;
 $secondary-color: #f9f9f9;
-$hover-color: #f1f1f1;
+$hover-color: #e2e6ea;
 $text-color: #333;
 $white-color: #ffffff;
+$border-color: #ddd;
+$danger-color: #dc3545;
+$danger-hover-color: #c82333;
 $success-color: #28a745;
 $success-hover-color: #218838;
-$border-color: #ddd;
-$table-padding: 10px;
-$font-size-small: 12px;
-$font-size-medium: 14px;
-$font-size-large: 1.5rem;
+$padding: 12px;
 
-// Styles
+// Books Container
 .books-container {
-  margin: 20px auto;
-  max-width: 800px;
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  background: $white-color;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid $border-color;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   h2 {
     text-align: center;
+    color: $primary-color;
+    font-size: 1.8rem;
     margin-bottom: 20px;
-    color: $text-color;
-    font-size: $font-size-large;
   }
 
+  .btn-add {
+    padding: 10px 15px;
+    background-color: $success-color;
+    color: $white-color;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s;
+    margin-bottom: 15px;
+
+    &:hover {
+      background-color: $success-hover-color;
+    }
+  }
+
+  // Books Table
   .books-table {
     width: 100%;
     border-collapse: collapse;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     overflow: hidden;
 
@@ -36,9 +62,9 @@ $font-size-large: 1.5rem;
       color: $white-color;
 
       th {
+        padding: $padding;
         text-align: left;
-        padding: $table-padding;
-        font-size: $font-size-medium;
+        font-size: 1rem;
       }
     }
 
@@ -54,24 +80,26 @@ $font-size-large: 1.5rem;
       }
 
       td {
-        padding: $table-padding;
-        font-size: $font-size-medium;
+        padding: $padding;
+        font-size: 1rem;
         border-bottom: 1px solid $border-color;
-
-        .btn-add {
-          padding: 5px 10px;
-          background-color: $success-color;
-          color: $white-color;
-          border: none;
-          border-radius: 4px;
-          cursor: pointer;
-          font-size: $font-size-small;
-
-          &:hover {
-            background-color: $success-hover-color;
-          }
-        }
       }
+    }
+  }
+
+  // Action Buttons
+  .btn-delete {
+    padding: 6px 12px;
+    background-color: $danger-color;
+    color: $white-color;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background 0.3s;
+
+    &:hover {
+      background-color: $danger-hover-color;
     }
   }
 }

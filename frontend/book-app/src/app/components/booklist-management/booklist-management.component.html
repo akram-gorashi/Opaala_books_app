@@ -1,10 +1,16 @@
 <div class="booklists-container">
-    <h2>Book Lists ({{ bookListCount() }})</h2>
-    <ul>
-      <li *ngFor="let list of bookLists()">
-        {{ list.name }} ({{ list.books.length }} books)
-        <button class="btn-delete" (click)="deleteBookList(list.id)">Delete</button>
-      </li>
-    </ul>
+  <h2>Book Lists ({{ bookListCount() }})</h2>
+
+  <div class="btn-add">
+    <button (click)="navigateToAddBookLists()">+ Add Book List</button>
   </div>
-  
+
+  <ul>
+    <li *ngFor="let list of bookLists()">
+      <span (click)="viewBookListDetails(list.id)" class="booklist-name">
+        {{ list.name }} ({{ list.books.length }} books)
+      </span>
+      <button class="btn-delete" (click)="deleteBookList(list.id)">Delete</button>
+    </li>
+  </ul>
+</div>
