@@ -26,8 +26,6 @@ export class BookListService {
     });
   }
 
-  
-
   // Create a new booklist
   createBookList(name: string, bookIds: number[]): void {
     this.http

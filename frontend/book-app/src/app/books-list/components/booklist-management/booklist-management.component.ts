@@ -24,10 +24,10 @@ export class BooklistManagementComponent {
   }
 
   navigateToAddBookLists(): void {
-    this.router.navigate(['/booklistcreate']); // Navigate to the book creation page
+    this.router.navigate(['/booklistcreate']); 
   }
 
   viewBookListDetails(id: number): void {
-    this.router.navigate([`/booklists/${id}`]); // Navigate to book list details
+    this.router.navigate([`/booklists/${id}`]); 
   }
 }
