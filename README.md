@@ -69,7 +69,7 @@ SCSS – A modern styling language for better UI/UX.
 * [ngMocks](https://ng-mocks.sudo.eu/) Testing library which helps with mocking services, components, directives, pipes and modules in tests for Angular applications. 
 
 ## Installation
-
+    Install the dependencies using this command:
     ```bash
         $ npm install
     ```
