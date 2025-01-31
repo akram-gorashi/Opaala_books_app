@@ -1,0 +1,4 @@
+Django==5.1.5
+djangorestframework
+drf-yasg  # For Swagger API documentation
+django-cors-headers  # For CORS handling
