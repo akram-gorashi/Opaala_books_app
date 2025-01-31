@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { BookListService } from '../../services/book-list.service';
 import {  signal, WritableSignal } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { BookList } from '../../models/book-list';
 
 describe('BooklistManagementComponent', () => {
   let component: BooklistManagementComponent;
@@ -21,7 +22,7 @@ describe('BooklistManagementComponent', () => {
     const mockBookLists = signal([
       { id: 1, name: 'Sci-Fi Classics', books: [{ id: 101, title: 'Dune', author: 'Frank Herbert', year: 1965 }] },
       { id: 2, name: 'Must Reads', books: [{ id: 102, title: '1984', author: 'George Orwell', year: 1949 }] }
-    ]) as WritableSignal<any[]>;
+    ]) as WritableSignal<BookList[]>;
 
     const mockBookListCount = signal(mockBookLists().length) as WritableSignal<number>;
 

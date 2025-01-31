@@ -1,17 +1,18 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { BooklistDetailComponent } from './booklist-detail.component';
-import { MockProvider } from 'ng-mocks';
-import { ActivatedRoute, convertToParamMap } from '@angular/router';
-import { BehaviorSubject, of } from 'rxjs';
-import { BookListService } from '../../services/book-list.service';
-import { signal, WritableSignal } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { signal, WritableSignal } from '@angular/core';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ActivatedRoute, convertToParamMap, ParamMap } from '@angular/router';
+import { MockProvider } from 'ng-mocks';
+import { BehaviorSubject } from 'rxjs';
+import { BookListService } from '../../services/book-list.service';
+import { BooklistDetailComponent } from './booklist-detail.component';
+import { BookList } from '../../models/book-list';
 
 describe('BooklistDetailComponent', () => {
   let component: BooklistDetailComponent;
   let fixture: ComponentFixture<BooklistDetailComponent>;
   let mockBookListService: jasmine.SpyObj<BookListService>;
-  let routeParamsSubject: BehaviorSubject<any>;
+  let routeParamsSubject: BehaviorSubject<ParamMap>;
 
   beforeEach(async () => {
     //  Create spy for BookListService
@@ -29,7 +30,7 @@ describe('BooklistDetailComponent', () => {
         name: 'Must Reads',
         books: [{ id: 102, title: '1984', author: 'George Orwell', year: 1949 }]
       }
-    ]) as WritableSignal<any[]>;
+    ]) as WritableSignal<BookList[]>;
 
     Object.defineProperty(mockBookListService, 'bookLists', { get: () => mockBookLists });
 

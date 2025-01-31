@@ -21,7 +21,7 @@ describe('BookListComponent', () => {
     const mockBooks = signal([
       { id: 1, title: 'Dune', author: 'Frank Herbert', year: 1965 },
       { id: 2, title: '1984', author: 'George Orwell', year: 1949 }
-    ]) as WritableSignal<any[]>;
+    ]) as WritableSignal<unknown[]>;
 
     const mockBookCount = signal(mockBooks().length) as WritableSignal<number>;
 

@@ -1,4 +1,4 @@
-# Book-rest-api
+# Book App Rest A pi
 A REST api written in Django for Books Application
 
 ## Technologies used

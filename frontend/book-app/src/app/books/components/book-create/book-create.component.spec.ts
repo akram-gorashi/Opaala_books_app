@@ -1,10 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { BookCreateComponent } from './book-create.component';
-import { MockProvider } from 'ng-mocks';
 import { ReactiveFormsModule } from '@angular/forms';
-import { BooksService } from '../../services/books.service';
 import { Router } from '@angular/router';
-import { of } from 'rxjs';
+import { MockProvider } from 'ng-mocks';
+import { BooksService } from '../../services/books.service';
+import { BookCreateComponent } from './book-create.component';
 
 describe('BookCreateComponent', () => {
   let component: BookCreateComponent;

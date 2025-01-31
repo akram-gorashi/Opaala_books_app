@@ -1,13 +1,13 @@
 import { CommonModule } from '@angular/common';
-import { signal, WritableSignal } from '@angular/core';
+import { signal } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { MockProvider } from 'ng-mocks';
+import { Book } from '../../../books/models/book';
 import { BooksService } from '../../../books/services/books.service';
 import { BookListService } from '../../services/book-list.service';
 import { BooklistCreateComponent } from './booklist-create.component';
-import { Book } from '../../../books/models/book';
 
 describe('BooklistCreateComponent', () => {
   let component: BooklistCreateComponent;
@@ -22,13 +22,16 @@ describe('BooklistCreateComponent', () => {
     mockBookListService = jasmine.createSpyObj('BookListService', ['createBookList']);
     mockRouter = jasmine.createSpyObj('Router', ['navigate']);
 
-    mockBookService.books = signal<Book[]>([
-      { id: 1, title: 'Dune', author: 'Frank Herbert', year: 1965 },
-      { id: 2, title: '1984', author: 'George Orwell', year: 1949 },
-    ]) as any;
+    Object.defineProperty(mockBookService, 'books', {
+      get: () => signal<Book[]>([
+        { id: 1, title: 'Dune', author: 'Frank Herbert', year: 1965 },
+        { id: 2, title: '1984', author: 'George Orwell', year: 1949 }
+      ])
+    });
+
 
     await TestBed.configureTestingModule({
-      imports: [BooklistCreateComponent, ReactiveFormsModule, FormsModule, CommonModule], 
+      imports: [BooklistCreateComponent, ReactiveFormsModule, FormsModule, CommonModule],
       providers: [
         MockProvider(BooksService, mockBookService),
         MockProvider(BookListService, mockBookListService),
