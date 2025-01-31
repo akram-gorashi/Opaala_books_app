@@ -43,20 +43,20 @@ A REST api written in Django for Books Application
         ```
 
 * #### Run It
-    Fire up the server using this one simple command:
+   * Fire up the server using this one simple command:
     ```bash
         $ python manage.py runserver
     ```
-    You can now access the file api service on your browser by using
+   * You can now access the file api service on your browser by using
     ```
         http://127.0.0.1:8000/api/
     ```
-     You can now access the file api service on swagger by using
+  *   You can now access the file api service on swagger by using
     ```
         http://127.0.0.1:8000/swagger/
     ```
 
-    # Book App (Angular Frontend)
+# Book App (Angular Frontend)
 
 A frontend web application built with Angular for managing books and book lists.
 
@@ -75,27 +75,25 @@ SCSS – A modern styling language for better UI/UX.
     ```
 
 * #### Run It
-    Fire up the server using this one simple command:
+   * Fire up the server using this one simple command:
     ```bash
         $ ng serve
     ```
-    You can now access the UI  on your browser by using
+   * You can now access the UI  on your browser by using
     ```
         http://localhost:4200
     ```
 * ####  Run unit tests
- To run unit tests:
+   * To run unit tests:
     ```bash
         $ ng test
     ```
-    To run tests with coverage report:
+   * To run tests with coverage report:
     ```
        ng test --code-coverage
 
     ```
-    
-After running, open the coverage report:
-```
-open coverage/index.html
-
-```
+   * After running, open the coverage report:
+    ```
+    open coverage/index.html
+    ```
