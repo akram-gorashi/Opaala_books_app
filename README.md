@@ -69,6 +69,10 @@ SCSS – A modern styling language for better UI/UX.
 * [ngMocks](https://ng-mocks.sudo.eu/) Testing library which helps with mocking services, components, directives, pipes and modules in tests for Angular applications. 
 
 ## Installation
+* Cd into your the cloned repo as such:
+    ```bash
+        $ cd book_full_stack_app/frontend/book-app
+    ```
 * Install the dependencies using this command:
     ```bash
         $ npm install
@@ -95,5 +99,5 @@ SCSS – A modern styling language for better UI/UX.
     ```
    * After running, open the coverage report:
     ```
-    open coverage/index.html
+        open coverage/index.html
     ```
