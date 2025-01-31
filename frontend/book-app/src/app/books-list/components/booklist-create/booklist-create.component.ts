@@ -17,7 +17,7 @@ export class BooklistCreateComponent {
   private router = inject(Router)
   successMessage = signal('');
   books = this.bookService.books;
-  selectedBookIds = signal<number[]>([]); // ✅ Signal to track selected books
+  selectedBookIds = signal<number[]>([]); // Signal to track selected books
 
   booklistForm = new FormGroup({
     name: new FormControl('', Validators.required),
