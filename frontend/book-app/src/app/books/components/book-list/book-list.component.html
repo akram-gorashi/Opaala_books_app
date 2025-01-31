@@ -1,5 +1,5 @@
 <div class="books-container">
-  <h2>Available Books  ({{ bookCount() }})</h2>
+  <h2>Available Books ({{ bookCount() }})</h2>
   <div class="btn-add">
     <button (click)="navigateToAddBook()">+ Add Book</button>
   </div>
@@ -15,9 +15,9 @@
       </tr>
     </thead>
     <tbody>
-      @for (book of books(); track book.id) {
+      @for (book of books(); track book.id; let i = $index) {
       <tr>
-        <td>{{ book.id }}</td>
+        <td>{{ i + 1}}</td>
         <td>{{ book.title }}</td>
         <td>{{ book.author }}</td>
         <td>{{ book.year }}</td>
