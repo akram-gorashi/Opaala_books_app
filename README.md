@@ -51,10 +51,19 @@ A REST api written in Django for Books Application
     ```
         http://127.0.0.1:8000/api/
     ```
-  *   You can now access the file api service on swagger by using
-    ```
+  
+* #### API Documentation
+    This API follows RESTful conventions and is documented using Swagger.
+    * #### Swagger Documentation
+    * Interactive API Docs:
+    ```bash
         http://127.0.0.1:8000/swagger/
     ```
+    * ReDoc API Documentation (Alternative UI):
+    ```bash
+        http://127.0.0.1:8000/redoc/
+    ```
+
 
 # Book App (Angular Frontend)
 
