@@ -1,17 +1,14 @@
 // Color Palette
-$primary-color: #007bff;
+$primary-color: #555dae;
 $secondary-color: #f8f9fa;
 $accent-color: #28a745;
 $danger-color: #dc3545;
-$warning-color: #ffc107;
-$info-color: #17a2b8;
 
 $text-color: #333;
 $light-text-color: #666;
 $white-color: #ffffff;
 $border-color: #ddd;
 $hover-color: #e2e6ea;
-$gray-color: #666;
 
 $font-size-large: 1.5rem;
 $font-size-regular: 1rem;
@@ -20,16 +17,13 @@ $gap-navbar-links: 15px;
 $text-hover-decoration: underline;
 
 // Navbar 
-//  Navbar Specific
 $padding-navbar: 12px 24px;
 $navbar-height: 60px;
-$gap-navbar-links: 15px;
 $navbar-link-padding: 10px;
 
 //  Global Layout
 $max-width: 1200px;
 $base-padding: 16px;
-$container-padding: 24px;
 
 //  Footer
 $footer-height: 50px;
