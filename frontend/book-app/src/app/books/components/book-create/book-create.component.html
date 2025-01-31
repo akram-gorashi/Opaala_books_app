@@ -1,21 +1,28 @@
 <div class="form-container">
-    <h2>Create a Book</h2>
-    <form [formGroup]="bookForm" (ngSubmit)="createBook()">
-      <label for="title">Title:</label>
-      <input id="title" formControlName="title" type="text" required />
-      <span *ngIf="bookForm.get('title')?.invalid && bookForm.get('title')?.touched">Title is required</span>
-  
-      <label for="author">Author:</label>
-      <input id="author" formControlName="author" type="text" required />
-      <span *ngIf="bookForm.get('author')?.invalid && bookForm.get('author')?.touched">Author is required</span>
-  
-      <label for="year">Year:</label>
-      <input id="year" formControlName="year" type="number" required />
-      <span *ngIf="bookForm.get('year')?.invalid && bookForm.get('year')?.touched">Enter a valid year</span>
-  
-      <button type="submit" [disabled]="bookForm.invalid">Create Book</button>
-    </form>
-  
-    <p class="success-message" *ngIf="successMessage()">{{ successMessage() }}</p>
-  </div>
-  
+  <h2>Create a Book</h2>
+  <form [formGroup]="bookForm" (ngSubmit)="createBook()">
+    <label for="title">Title:</label>
+    <input id="title" formControlName="title" type="text" required />
+    @if (bookForm.get('title')?.invalid && bookForm.get('title')?.touched) {
+      <span>Title is required</span>
+    }
+
+    <label for="author">Author:</label>
+    <input id="author" formControlName="author" type="text" required />
+    @if (bookForm.get('author')?.invalid && bookForm.get('author')?.touched) {
+      <span>Author is required</span>
+    }
+
+    <label for="year">Year:</label>
+    <input id="year" formControlName="year" type="number" required />
+    @if (bookForm.get('year')?.invalid && bookForm.get('year')?.touched) {
+      <span>Enter a valid year</span>
+    }
+
+    <button type="submit" [disabled]="bookForm.invalid">Create Book</button>
+  </form>
+
+  @if (successMessage()) {
+    <p class="success-message">{{ successMessage() }}</p>
+  }
+</div>

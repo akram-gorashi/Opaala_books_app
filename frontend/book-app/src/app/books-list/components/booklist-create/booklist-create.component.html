@@ -1,18 +1,24 @@
 <div class="form-container">
-    <h2>Create a Book List</h2>
-    <form [formGroup]="booklistForm" (ngSubmit)="createBookList()">
-      <label for="name">List Name:</label>
-      <input id="name" formControlName="name" type="text" required />
-      <span *ngIf="booklistForm.get('name')?.invalid && booklistForm.get('name')?.touched">Name is required</span>
-  
-      <p>Select Books:</p>
-      <div *ngFor="let book of books()">
+  <h2>Create a Book List</h2>
+  <form [formGroup]="booklistForm" (ngSubmit)="createBookList()">
+    <label for="name">List Name:</label>
+    <input id="name" formControlName="name" type="text" required />
+    
+    @if (booklistForm.get('name')?.invalid && booklistForm.get('name')?.touched) {
+      <span>Name is required</span>
+    }
+
+    <p>Select Books:</p>
+    @for (book of books(); track book.id) {
+      <div>
         <input type="checkbox" [value]="book.id" (change)="updateBookSelection(book.id, $event)" /> {{ book.title }}
       </div>
-  
-      <button type="submit" [disabled]="booklistForm.invalid">Create Book List</button>
-    </form>
-  
-    <p class="success-message" *ngIf="successMessage()">{{ successMessage() }}</p>
-  </div>
-  
+    }
+
+    <button type="submit" [disabled]="booklistForm.invalid">Create Book List</button>
+  </form>
+
+  @if (successMessage()) {
+    <p class="success-message">{{ successMessage() }}</p>
+  }
+</div>

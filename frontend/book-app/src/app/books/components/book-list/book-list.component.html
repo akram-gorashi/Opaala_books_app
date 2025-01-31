@@ -1,7 +1,6 @@
 <div class="books-container">
   <h2>Books List ({{ bookCount() }})</h2>
   <div class="btn-add">
-
     <button (click)="navigateToAddBook()">+ Add Book</button>
   </div>
 
@@ -16,15 +15,17 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let book of books(); let i = index">
-        <td>{{ i + 1 }}</td>
-        <td>{{ book.title }}</td>
-        <td>{{ book.author }}</td>
-        <td>{{ book.year }}</td>
-        <td>
-          <button class="btn-delete" (click)="deleteBook(book.id)">Delete</button>
-        </td>
-      </tr>
+      @for (book of books(); track book.id) {
+        <tr>
+          <td>{{ book.id }}</td>
+          <td>{{ book.title }}</td>
+          <td>{{ book.author }}</td>
+          <td>{{ book.year }}</td>
+          <td>
+            <button class="btn-delete" (click)="deleteBook(book.id)">Delete</button>
+          </td>
+        </tr>
+      }
     </tbody>
   </table>
 </div>

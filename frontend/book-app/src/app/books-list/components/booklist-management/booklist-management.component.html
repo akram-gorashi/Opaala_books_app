@@ -6,11 +6,13 @@
   </div>
 
   <ul>
-    <li *ngFor="let list of bookLists()">
-      <button (click)="viewBookListDetails(list.id)" class="booklist-name">
-        {{ list.name }} ({{ list.books.length }} books)
-      </button>
-      <button class="btn-delete" (click)="deleteBookList(list.id)">Delete</button>
-    </li>
+    @for (list of bookLists(); track list.id) {
+      <li>
+        <button (click)="viewBookListDetails(list.id)" class="booklist-name">
+          {{ list.name }} ({{ list.books.length }} books)
+        </button>
+        <button class="btn-delete" (click)="deleteBookList(list.id)">Delete</button>
+      </li>
+    }
   </ul>
 </div>
