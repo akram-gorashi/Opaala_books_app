@@ -10,7 +10,7 @@ A REST api written in Django for Books Application
 * If you wish to run your own build, first ensure you have python globally installed in your computer. If not, you can get python [here](https://www.python.org").
 * After doing this, confirm that you have installed virtualenv globally as well. If not, run this:
     ```bash
-        $ pip install virtualenv
+        $ python -m pip install virtualenv
     ```
 * Then, Git clone this repo to your PC
     ```bash
@@ -20,11 +20,16 @@ A REST api written in Django for Books Application
 * #### Dependencies
     1. Cd into your the cloned repo as such:
         ```bash
-            $ cd book_full_stack_app/backend
+            $ cd Opaala_books_app/backend
         ```
     2. Create and fire up your virtual environment:
+    * For Windows
         ```bash
-            $ virtualenv  venv -p python3
+            $ python -m venv venv
+            $ venv\Scripts\Activate.ps1
+        ```
+    * For Mac/Linux
+        ```bash
             $ source venv/bin/activate
         ```
     3. Install the dependencies needed to run the app:
@@ -39,6 +44,7 @@ A REST api written in Django for Books Application
     5. You can just migrate seed data avialable in migrations folder in [SeedBooks]
     ('https://github.com/akram-gorashi/Opaala_books_app/blob/readme/backend/books/migrations/0003_seed_books.py') 
         ```bash
+            $ python manage.py makemigrations --merge
             $ python manage.py migrate
         ```
 
@@ -49,7 +55,7 @@ A REST api written in Django for Books Application
     ```
    * You can now access the file api service on your browser by using
     ```
-        http://127.0.0.1:8000/api/
+        http://127.0.0.1:8000/api/books/
     ```
   
 * #### API Documentation
@@ -80,7 +86,7 @@ SCSS – A modern styling language for better UI/UX.
 ## Installation
 * Cd into your the cloned repo as such:
     ```bash
-        $ cd book_full_stack_app/frontend/book-app
+        $ cd Opaala_books_app/frontend/book-app
     ```
 * Install the dependencies using this command:
     ```bash
